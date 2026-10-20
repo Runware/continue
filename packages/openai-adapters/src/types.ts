@@ -77,6 +77,11 @@ export const DeepseekConfigSchema = OpenAIConfigSchema.extend({
 });
 export type DeepseekConfig = z.infer<typeof DeepseekConfigSchema>;
 
+export const RunwareConfigSchema = OpenAIConfigSchema.extend({
+  provider: z.literal("runware"),
+});
+export type RunwareConfig = z.infer<typeof RunwareConfigSchema>;
+
 export const MiniMaxConfigSchema = OpenAIConfigSchema.extend({
   provider: z.literal("minimax"),
 });
@@ -261,6 +266,7 @@ export const LLMConfigSchema = z.discriminatedUnion("provider", [
   MoonshotConfigSchema,
   DeepseekConfigSchema,
   MiniMaxConfigSchema,
+  RunwareConfigSchema,
   CohereConfigSchema,
   AzureConfigSchema,
   GeminiConfigSchema,
