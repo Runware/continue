@@ -117,6 +117,7 @@
                       "customize/model-providers/more/moonshot",
                       "customize/model-providers/more/nous",
                       "customize/model-providers/more/nvidia",
+                      "customize/model-providers/more/runware",
                       "customize/model-providers/more/tensorix",
                       "customize/model-providers/more/together",
                       "customize/model-providers/more/xAI",
@@ -747,6 +748,14 @@
     {
       "source": "/advanced/model-providers/more/novita",
       "destination": "/customize/model-providers/more/novita"
+    },
+    {
+      "source": "/reference/Model Providers/runware",
+      "destination": "/customize/model-providers/more/runware"
+    },
+    {
+      "source": "/advanced/model-providers/more/runware",
+      "destination": "/customize/model-providers/more/runware"
     },
     {
       "source": "/reference/Model Providers/vllm",

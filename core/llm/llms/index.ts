@@ -54,6 +54,7 @@ import ClawRouter from "./ClawRouter";
 import OVHcloud from "./OVHcloud";
 import { Relace } from "./Relace";
 import Replicate from "./Replicate";
+import Runware from "./Runware";
 import SageMaker from "./SageMaker";
 import SambaNova from "./SambaNova";
 import Scaleway from "./Scaleway";
@@ -83,6 +84,7 @@ export const LLMClasses = [
   TextGenWebUI,
   Together,
   Novita,
+  Runware,
   HuggingFaceTGI,
   HuggingFaceTEIEmbeddingsProvider,
   HuggingFaceInferenceAPI,

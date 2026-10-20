@@ -19,6 +19,7 @@ import Scaleway from "./Scaleway.js";
 import Venice from "./Venice.js";
 import Moonshot from "./Moonshot.js";
 import Novita from "./Novita.js";
+import Runware from "./Runware.js";
 import SiliconFlow from "./SiliconFlow.js";
 import Kindo from "./Kindo.js";
 import Azure from "./Azure.js";
@@ -374,6 +375,11 @@ createOpenAISubclassTests(Novita, {
   providerName: "novita",
   defaultApiBase: "https://api.novita.ai/v3/openai/",
   customStreamCompleteEndpoint: "completions",
+});
+
+createOpenAISubclassTests(Runware, {
+  providerName: "runware",
+  defaultApiBase: "https://api.runware.ai/v1/",
 });
 
 createOpenAISubclassTests(SiliconFlow, {

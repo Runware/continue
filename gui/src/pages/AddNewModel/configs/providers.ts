@@ -589,6 +589,42 @@ Select the \`GPT-4o\` model below to complete your provider configuration, but n
     ],
     apiKeyUrl: "https://platform.minimax.io",
   },
+  runware: {
+    title: "Runware",
+    provider: "runware",
+    refPage: "runware",
+    description:
+      "Runware provides fast, OpenAI-compatible access to leading models from OpenAI, Anthropic, Google, DeepSeek and more.",
+    longDescription: `[Runware](https://runware.ai) offers an OpenAI-compatible API for leading language models. To get started with Runware:\n1. Obtain an API key from the [Runware dashboard](https://runware.ai/dashboard)\n2. Paste below\n3. Select a model preset`,
+    tags: [ModelProviderTags.RequiresApiKey],
+    params: {
+      apiKey: "",
+    },
+    collectInputFor: [
+      {
+        inputType: "text",
+        key: "apiKey",
+        label: "API Key",
+        placeholder: "Enter your Runware API key",
+        required: true,
+      },
+      ...completionParamsInputsConfigs,
+    ],
+    packages: [
+      models.runwareGpt54Mini,
+      models.runwareClaudeSonnet46,
+      models.runwareGemini31Pro,
+      models.runwareDeepseekV4Pro,
+      {
+        ...models.AUTODETECT,
+        params: {
+          ...models.AUTODETECT.params,
+          title: "Runware",
+        },
+      },
+    ],
+    apiKeyUrl: "https://runware.ai/dashboard",
+  },
   inception: {
     title: "Inception Labs",
     provider: "inception",

@@ -20,6 +20,7 @@ import { OpenAIApi } from "./apis/OpenAI.js";
 import { OpenRouterApi } from "./apis/OpenRouter.js";
 import { ClawRouterApi } from "./apis/ClawRouter.js";
 import { RelaceApi } from "./apis/Relace.js";
+import { RunwareApi } from "./apis/Runware.js";
 import { VertexAIApi } from "./apis/VertexAI.js";
 import { WatsonXApi } from "./apis/WatsonX.js";
 import { BaseLlmApi } from "./apis/base.js";
@@ -170,6 +171,8 @@ export function constructLlmApi(config: LLMConfig): BaseLlmApi | undefined {
       return openAICompatible("https://api.ncompass.tech/v1", config);
     case "novita":
       return openAICompatible("https://api.novita.ai/v3/openai", config);
+    case "runware":
+      return new RunwareApi(config);
     case "nebius":
       return openAICompatible("https://api.studio.nebius.ai/v1/", config);
     case "function-network":

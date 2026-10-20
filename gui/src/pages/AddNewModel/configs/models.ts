@@ -2788,6 +2788,54 @@ export const models: { [key: string]: ModelPackage } = {
     isOpenSource: true,
   },
 
+  runwareGpt54Mini: {
+    title: "GPT-5.4 Mini",
+    description:
+      "Compact, efficient variant of GPT-5.4 designed for coding assistants and subagent orchestration. 400K context window.",
+    params: {
+      title: "GPT-5.4 Mini",
+      model: "openai-gpt-5-4-mini",
+      contextLength: 400_000,
+    },
+    providerOptions: ["runware"],
+    isOpenSource: false,
+  },
+  runwareClaudeSonnet46: {
+    title: "Claude Sonnet 4.6",
+    description:
+      "Anthropic's most capable Sonnet model, built for daily production use across coding and agentic tasks. 1M context window.",
+    params: {
+      title: "Claude Sonnet 4.6",
+      model: "anthropic-claude-sonnet-4-6",
+      contextLength: 1_000_000,
+    },
+    providerOptions: ["runware"],
+    isOpenSource: false,
+  },
+  runwareGemini31Pro: {
+    title: "Google Gemini 3.1 Pro",
+    description:
+      "Google's flagship multimodal language model with high-performance reasoning. 1M context window.",
+    params: {
+      title: "Google Gemini 3.1 Pro",
+      model: "google-gemini-3-1-pro",
+      contextLength: 1_048_576,
+    },
+    providerOptions: ["runware"],
+    isOpenSource: false,
+  },
+  runwareDeepseekV4Pro: {
+    title: "DeepSeek-V4-Pro",
+    description:
+      "DeepSeek's flagship V4 language model for coding, reasoning, and agent workflows. 1M context window.",
+    params: {
+      title: "DeepSeek-V4-Pro",
+      model: "deepseek-v4-pro",
+      contextLength: 1_048_576,
+    },
+    providerOptions: ["runware"],
+    isOpenSource: false,
+  },
   AUTODETECT: {
     title: "Autodetect",
     description:

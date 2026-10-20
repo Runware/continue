@@ -1,0 +1,57 @@
+---
+title: "Runware"
+description: "Configure Runware with Continue to access leading language models through an OpenAI-compatible API"
+---
+
+[Runware](https://runware.ai) provides an OpenAI-compatible API for leading language models from OpenAI, Anthropic, Google, DeepSeek, xAI, Z.ai, MiniMax and more. Sign up [here](https://runware.ai/dashboard), copy your API key, and select any model from the [Runware model catalog](https://runware.ai/docs/models-api/introduction).
+
+<Tabs>
+  <Tab title="YAML">
+  ```yaml title="config.yaml"
+  name: My Config
+  version: 0.0.1
+  schema: v1
+
+  models:
+    - name: GPT-5.4 Mini
+      provider: runware
+      model: openai-gpt-5-4-mini
+      apiKey: <YOUR_RUNWARE_API_KEY>
+  ```
+  </Tab>
+  <Tab title="JSON">
+  ```json title="config.json"
+  {
+    "models": [
+      {
+        "title": "GPT-5.4 Mini",
+        "provider": "runware",
+        "model": "openai-gpt-5-4-mini",
+        "apiKey": "<YOUR_RUNWARE_API_KEY>"
+      }
+    ]
+  }
+  ```
+  </Tab>
+</Tabs>
+
+## Available Models
+
+Runware exposes an OpenAI-compatible `/v1/models` endpoint, so Continue can discover the current model list automatically. A few verified options:
+
+| Model | Description |
+| :---- | :---------- |
+| `openai-gpt-5-4-mini` | Compact, efficient GPT-5.4 variant. 400K context window. |
+| `anthropic-claude-sonnet-4-6` | Anthropic's most capable Sonnet model. 1M context window. |
+| `google-gemini-3-1-pro` | Google's flagship multimodal model. 1M context window. |
+| `deepseek-v4-pro` | DeepSeek's flagship V4 model. 1M context window. |
+| `xai-grok-4-3` | xAI's flagship model. 1M context window. |
+| `minimax-m2-7` | MiniMax M2.7 long-context model. 200K context window. |
+
+## Notes
+
+- Runware uses an OpenAI-compatible API at `https://api.runware.ai/v1`
+- Configure `apiKey` in your config (or reference an environment variable via the config `env` field)
+- Override the base URL with the `apiBase` option if you need to route through a proxy
+
+[View the source](https://github.com/continuedev/continue/blob/main/core/llm/llms/Runware.ts)
